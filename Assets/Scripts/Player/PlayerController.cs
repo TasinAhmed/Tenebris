@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D myRigidBody;
     private Vector3 change;
     private Animator anim;
+    public float fireRate = 0.5f;
+    public float nextFire = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +24,20 @@ public class PlayerController : MonoBehaviour
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
+        if (Input.GetButtonDown("attack") && Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            StartCoroutine(AttackCo());
+        }
         UpdateAnimationAndMove(); 
+    }
+
+    private IEnumerator AttackCo()
+    {
+        anim.SetBool("attacking", true);
+        yield return null;
+        anim.SetBool("attacking", false);
+        yield return new WaitForSeconds(0.3f);
     }
 
     void UpdateAnimationAndMove()
