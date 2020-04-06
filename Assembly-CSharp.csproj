@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Turtle\TurtleController.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Tasin/Documents/Tenebris/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

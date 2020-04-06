@@ -47,6 +47,9 @@ TagManager:
   - name: AboveGround
     uniqueID: 2865265211
     locked: 0
+  - name: Enemy
+    uniqueID: 3453668539
+    locked: 0
   - name: Player
     uniqueID: 3093609649
     locked: 0
