@@ -2113,12 +2113,13 @@ GameObject:
   - component: {fileID: 341025780}
   - component: {fileID: 341025779}
   - component: {fileID: 341025778}
-  - component: {fileID: 341025777}
   - component: {fileID: 341025776}
   - component: {fileID: 341025775}
+  - component: {fileID: 341025777}
+  - component: {fileID: 341025781}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2136,9 +2137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  maxHealth: 5
-  currentHealth: 5
-  healthBar: {fileID: 1110261508}
 --- !u!95 &341025776
 Animator:
   serializedVersion: 3
@@ -2158,8 +2156,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &341025777
-BoxCollider2D:
+--- !u!58 &341025777
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2167,23 +2165,13 @@ BoxCollider2D:
   m_GameObject: {fileID: 341025774}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 6f532e2593c9d684ca681330700d09b2, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.18300676, y: -0.9302809}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5, y: 5}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0.17, y: -0.47}
   serializedVersion: 2
-  m_Size: {x: 0.9824554, y: 0.49399853}
-  m_EdgeRadius: 0
+  m_Radius: 0.73
 --- !u!50 &341025778
 Rigidbody2D:
   serializedVersion: 4
@@ -2269,6 +2257,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &341025781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341025774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7adb726b8e9b0634d94c52145c2e5fbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 5
+  maxHealth: 5
+  healthBar: {fileID: 1110261508}
 --- !u!1 &352276157
 GameObject:
   m_ObjectHideFlags: 0
@@ -11670,8 +11673,9 @@ GameObject:
   - component: {fileID: 1557439160}
   - component: {fileID: 1557439159}
   - component: {fileID: 1557439158}
-  - component: {fileID: 1557439157}
   - component: {fileID: 1557439162}
+  - component: {fileID: 1557439163}
+  - component: {fileID: 1557439157}
   m_Layer: 0
   m_Name: Turtle
   m_TagString: Untagged
@@ -11679,8 +11683,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!58 &1557439157
-CircleCollider2D:
+--- !u!61 &1557439157
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -11692,9 +11696,19 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.12}
+  m_Offset: {x: -0.022174835, y: 0.13192213}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.75, y: 3.75}
+    newSize: {x: 3.75, y: 3.75}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.66
+  m_Size: {x: 1.1339436, y: 1.2095213}
+  m_EdgeRadius: 0
 --- !u!50 &1557439158
 Rigidbody2D:
   serializedVersion: 4
@@ -11815,6 +11829,21 @@ MonoBehaviour:
   speed: 3
   maxRange: 7
   minRange: 0
+--- !u!114 &1557439163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557439156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f6950dc51d8154298d350aaba5fd7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitToHurt: 1.5
+  isTouching: 0
+  damageToGive: 1
 --- !u!1 &1710981037
 GameObject:
   m_ObjectHideFlags: 0

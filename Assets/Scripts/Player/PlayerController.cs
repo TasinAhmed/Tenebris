@@ -4,30 +4,21 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed;
+    public float speed = 0f;
     private Rigidbody2D myRigidBody;
     private Vector3 change;
     private Animator anim;
-    public int maxHealth = 5;
-    public int currentHealth;
-    public Healthbar healthBar;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         myRigidBody = GetComponent<Rigidbody2D>();
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(1);
-        }
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
@@ -52,11 +43,5 @@ public class PlayerController : MonoBehaviour
     void MoveCharacter()
     {
         myRigidBody.MovePosition(transform.position + change.normalized * speed * Time.deltaTime);
-    }
-
-    void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
     }
 }
