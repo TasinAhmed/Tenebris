@@ -2169,9 +2169,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17, y: -0.47}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.73
+  m_Radius: 0.8
 --- !u!50 &341025778
 Rigidbody2D:
   serializedVersion: 4
@@ -2180,9 +2180,9 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341025774}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -11683,8 +11683,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &1557439157
-BoxCollider2D:
+--- !u!58 &1557439157
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -11696,19 +11696,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.022174835, y: 0.13192213}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.75, y: 3.75}
-    newSize: {x: 3.75, y: 3.75}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1.1339436, y: 1.2095213}
-  m_EdgeRadius: 0
+  m_Radius: 0.68
 --- !u!50 &1557439158
 Rigidbody2D:
   serializedVersion: 4
@@ -11828,7 +11818,7 @@ MonoBehaviour:
   homePos: {fileID: 786270578}
   speed: 3
   maxRange: 7
-  minRange: 0
+  minRange: 0.8
 --- !u!114 &1557439163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11841,9 +11831,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48f6950dc51d8154298d350aaba5fd7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitToHurt: 1.5
+  waitToHurt: 0.5
   isTouching: 0
-  damageToGive: 1
+  damageToGive: 5
 --- !u!1 &1710981037
 GameObject:
   m_ObjectHideFlags: 0
