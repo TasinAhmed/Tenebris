@@ -7,27 +7,40 @@ public class HealthManager : MonoBehaviour
     public int currentHealth;
     public int maxHealth;
     public Healthbar healthBar;
+    private bool flashActive;
+    private float flashCounter = 0.5f;
+    private float flashLength = 0.5f;
+    private PlayerController player;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        player = GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (flashActive)
         {
-            TakeDamage(1);
+            player.GetComponent<Animator>().SetBool("hurt", true);
+            if(flashCounter <= 0)
+            {
+                player.GetComponent<Animator>().SetBool("hurt", false);
+                flashActive = false;
+            }
+            flashCounter -= Time.deltaTime;
         }
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        flashActive = true;
         healthBar.SetHealth(currentHealth);
+        flashCounter = flashLength;
         if(currentHealth <= 0)
         {
             gameObject.SetActive(false);

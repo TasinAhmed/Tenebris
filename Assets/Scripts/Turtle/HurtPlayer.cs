@@ -5,18 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class HurtPlayer : MonoBehaviour
 {
-    public float waitToHurt = 1.5f;
+    public float waitToHurt = 0.5f;
     public bool isTouching;
     private HealthManager healthMan;
     [SerializeField]
-    private int damageToGive = 1;
-    private PlayerController player;
+    private int damageToGive = 5;
 
     // Start is called before the first frame update
     void Start()
     {
         healthMan = FindObjectOfType<HealthManager>();
-        player = FindObjectOfType<PlayerController>();
     }
 
     // Update is called once per frame
@@ -36,7 +34,7 @@ public class HurtPlayer : MonoBehaviour
             if(waitToHurt <= 0)
             {
                 healthMan.TakeDamage(damageToGive);
-                waitToHurt = 1.5f;
+                waitToHurt = 0.5f;
             }
         }
     }
@@ -49,7 +47,6 @@ public class HurtPlayer : MonoBehaviour
             //other.gameObject.SetActive(false);
             other.gameObject.GetComponent<HealthManager>().TakeDamage(damageToGive);
             //reloading = true;
-            player.StartHurt();
         }
     }
 
@@ -66,8 +63,7 @@ public class HurtPlayer : MonoBehaviour
         if (other.collider.tag == "Player")
         {
             isTouching = false;
-            waitToHurt = 1.5f;
-            player.StopHurt();
+            waitToHurt = 0.5f;
         }
     }
 }

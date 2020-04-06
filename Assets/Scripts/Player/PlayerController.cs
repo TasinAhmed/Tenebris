@@ -44,13 +44,4 @@ public class PlayerController : MonoBehaviour
     {
         myRigidBody.MovePosition(transform.position + change.normalized * speed * Time.deltaTime);
     }
-
-    public void StartHurt()
-    {
-        anim.SetBool("hurt", true);
-    }
-    public void StopHurt()
-    {
-        anim.SetBool("hurt", false);
-    }
 }
