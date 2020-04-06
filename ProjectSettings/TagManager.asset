@@ -50,6 +50,9 @@ TagManager:
   - name: Enemy
     uniqueID: 3453668539
     locked: 0
+  - name: Wizard
+    uniqueID: 3222775765
+    locked: 0
   - name: Player
     uniqueID: 3093609649
     locked: 0

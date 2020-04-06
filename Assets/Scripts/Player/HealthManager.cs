@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
@@ -43,7 +44,13 @@ public class HealthManager : MonoBehaviour
         flashCounter = flashLength;
         if(currentHealth <= 0)
         {
-            gameObject.SetActive(false);
+            Invoke("Respawn", 1.4f);
+            player.GetComponent<Animator>().SetBool("death", true);
         }
+    }
+
+    void Respawn()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
