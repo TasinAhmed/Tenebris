@@ -10,11 +10,13 @@ public class HurtPlayer : MonoBehaviour
     private HealthManager healthMan;
     [SerializeField]
     private int damageToGive = 1;
+    private PlayerController player;
 
     // Start is called before the first frame update
     void Start()
     {
         healthMan = FindObjectOfType<HealthManager>();
+        player = FindObjectOfType<PlayerController>();
     }
 
     // Update is called once per frame
@@ -47,6 +49,7 @@ public class HurtPlayer : MonoBehaviour
             //other.gameObject.SetActive(false);
             other.gameObject.GetComponent<HealthManager>().TakeDamage(damageToGive);
             //reloading = true;
+            player.StartHurt();
         }
     }
 
@@ -64,6 +67,7 @@ public class HurtPlayer : MonoBehaviour
         {
             isTouching = false;
             waitToHurt = 1.5f;
+            player.StopHurt();
         }
     }
 }
