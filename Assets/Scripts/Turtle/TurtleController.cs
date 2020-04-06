@@ -31,10 +31,6 @@ public class TurtleController : MonoBehaviour
         {
             GoHome();
         }
-        if (Vector3.Distance(transform.position, homePos.position) == 0)
-        {
-            myAnim.SetBool("isMoving", false);
-        }
     }
 
     public void FollowPlayer()
@@ -50,5 +46,9 @@ public class TurtleController : MonoBehaviour
         myAnim.SetFloat("moveX", (homePos.position.x - transform.position.x));
         myAnim.SetFloat("moveY", (homePos.position.y - transform.position.y));
         transform.position = Vector3.MoveTowards(transform.position, homePos.position, speed * Time.deltaTime);
+        if (Vector3.Distance(transform.position, homePos.position) == 0)
+        {
+            myAnim.SetBool("isMoving", false);
+        }
     }
 }
