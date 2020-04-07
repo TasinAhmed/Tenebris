@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     public float fireRate = 0.5f;
     public float nextFire = 0f;
+    public GameObject projectile;
 
     // Start is called before the first frame update
     void Start()
@@ -34,10 +35,24 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator AttackCo()
     {
-        anim.SetBool("attacking", true);
+        //anim.SetBool("attacking", true);
         yield return null;
-        anim.SetBool("attacking", false);
+        MakeFire();
+        //anim.SetBool("attacking", false);
         yield return new WaitForSeconds(0.3f);
+    }
+
+    public void MakeFire()
+    {
+        Vector2 temp = new Vector2(anim.GetFloat("moveX"), anim.GetFloat("moveY"));
+        Fire fire = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Fire>();
+        fire.Setup(temp, ChooseArrowDirection());
+    }
+
+    Vector3 ChooseArrowDirection()
+    {
+        float temp = Mathf.Atan2(anim.GetFloat("moveX"), -1*anim.GetFloat("moveY"))*Mathf.Rad2Deg;
+        return new Vector3(0,0, temp);
     }
 
     void UpdateAnimationAndMove()

@@ -13129,7 +13129,7 @@ GameObject:
   - component: {fileID: 341025775}
   - component: {fileID: 341025781}
   - component: {fileID: 341025777}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -13148,9 +13148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823a5b9381d4f004dbcf1fa413d91d62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 15
   fireRate: 1
   nextFire: 0
+  projectile: {fileID: 713632599018079602, guid: dda86bbdc02061e4cb0fea00495defda,
+    type: 3}
 --- !u!95 &341025776
 Animator:
   serializedVersion: 3
@@ -34508,9 +34510,10 @@ GameObject:
   - component: {fileID: 1514016509}
   - component: {fileID: 1514016508}
   - component: {fileID: 1514016507}
+  - component: {fileID: 1514016514}
   m_Layer: 0
   m_Name: Carrot1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34676,6 +34679,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1514016514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514016506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 174bd6e8bebcdf6408e62d0ea6eb743a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1519980978
 GameObject:
   m_ObjectHideFlags: 0
@@ -39627,9 +39642,10 @@ GameObject:
   - component: {fileID: 1557439163}
   - component: {fileID: 1557439157}
   - component: {fileID: 1557439162}
+  - component: {fileID: 1557439164}
   m_Layer: 0
   m_Name: Turtle
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39761,18 +39777,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557439156}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fd7fbef8badaff4cb2e5cd895d33ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  enemyName: 
-  touchDamage: 0
-  moveSpeed: 0
   homePos: {fileID: 786270578}
-  speed: 3
-  maxRange: 7
+  speed: 0
+  maxRange: 0
   minRange: 0
 --- !u!114 &1557439163
 MonoBehaviour:
@@ -39789,6 +39801,18 @@ MonoBehaviour:
   waitToHurt: 0.5
   isTouching: 0
   damageToGive: 5
+--- !u!114 &1557439164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557439156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 174bd6e8bebcdf6408e62d0ea6eb743a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1846402745
 GameObject:
   m_ObjectHideFlags: 0
