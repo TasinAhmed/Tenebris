@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurtleController : Enemy
+public class TurtleController : MonoBehaviour
 {
     private Animator myAnim;
     private Transform target;
