@@ -35,10 +35,10 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator AttackCo()
     {
-        //anim.SetBool("attacking", true);
+        anim.SetBool("attacking", true);
         yield return null;
         MakeFire();
-        //anim.SetBool("attacking", false);
+        anim.SetBool("attacking", false);
         yield return new WaitForSeconds(0.3f);
     }
 
