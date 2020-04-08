@@ -25,6 +25,7 @@ public class TakeDamage : MonoBehaviour
             if(health == 0)
             {
                 Destroy(this.gameObject);
+                SoulsManager.souls += 1;
             }
         }
     }
